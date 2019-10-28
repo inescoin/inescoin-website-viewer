@@ -28,8 +28,6 @@ if (empty($domain)) {
   <?php   }
         }
   ?>
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="assets/css/inescoin.min.css" rel="stylesheet">
 
   <title><?php echo $domain['website']['title']; ?></title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -52,7 +50,7 @@ if (empty($domain)) {
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <?php foreach ($domain['pages'] as $page): ?>
-            <?php if ($page['shownInMenu'] && !empty($page['menuTitle'])) : ?>
+            <?php if ($page['shownInMenu'] && !empty($page['menuTitle']) && !$page['isLink']) : ?>
               <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#<?php echo $page['divId']; ?>"><?php echo $page['menuTitle']; ?></a>
               </li>
@@ -104,7 +102,7 @@ if (empty($domain)) {
   <footer class="bg-light py-5">
     <div class="container">
       <div class="small text-center text-muted">Copyright &copy; <?php echo $domain['company']['year']; ?> - <?php echo $domain['company']['name']; ?></div>
-      <div class="small text-center text-muted">This website is generated/hosted into Inescoin Blockchain: <a href="http://localhost:8000/?domain=<?php echo $websiteName; ?>"><?php echo $websiteName; ?></div>
+      <div class="small text-center text-muted">This website is generated with <a href="https://wallet.inescoin.org/">Inescoin Offline Wallet</a> and hosted into Inescoin Blockchain: <a href="https://explorer.inescoin.org/?domain=<?php echo $websiteName; ?>"><?php echo $websiteName; ?></a></div>
     </div>
   </footer>
 

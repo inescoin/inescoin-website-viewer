@@ -27,8 +27,8 @@ class App
 	public $cacheFolder = '../cache/';
 	public $cacheClearTimer = 180;
 
-	// public function __construct($nodeUrl = 'https://node.inescoin.org/')
-	public function __construct($nodeUrl = 'http://inescoin-node:8086')
+	public function __construct($nodeUrl = 'https://node.inescoin.org/')
+	//public function __construct($nodeUrl = 'http://inescoin-node:8086')
 	{
 		$this->client = new \GuzzleHttp\Client([
 			'base_uri' => $nodeUrl,
