@@ -1,0 +1,15 @@
+{
+    "name": "moon/blockchain",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Blockchain\\": "src/app/"
+        }
+    }
+}
