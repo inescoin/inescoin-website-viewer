@@ -1,3 +1,5 @@
 /cache
 /test
 /vendor
+/public/cache
+/public/store/cache
