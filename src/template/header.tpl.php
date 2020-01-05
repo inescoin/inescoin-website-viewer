@@ -1,5 +1,5 @@
 <?php
-// Copyright 2019 The Inescoin developers.
+// Copyright 2019-2020 The Inescoin developers.
 // - Mounir R'Quiba
 // Licensed under the GNU Affero General Public License, version 3.
 ?><nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -61,7 +61,6 @@ if (empty($domain)) {
   <script type="text/javascript">
     <?php echo $domain['theme']['js']['value']; ?>
   </script>
-  <script type="text/javascript" src="/assets/js/main.js"></script>
 </body>
 </html>
 
