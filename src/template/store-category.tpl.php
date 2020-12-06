@@ -13,7 +13,7 @@
 	        <a href="./?p=<?php echo $product['title'] . '._.' .  $product['sku'] ?>"><img class="card-img-top" src="<?php echo $product['image'] ?>" alt=""></a>
 	        <div class="card-body">
 	          <h4 class="card-title">
-	            <a href="./?p=<?php echo $product['title'] . '._.' .  $product['sku'] ?>"><?php echo $product['title'] ?></a>
+	            <a href="/store/?p=<?php echo $product['title'] . '._.' .  $product['sku'] ?>"><?php echo $product['title'] ?></a>
 	          </h4>
 	          <p class="card-text"><?php echo $product['description'] ?></p>
 	        </div>

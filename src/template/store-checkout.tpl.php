@@ -1,8 +1,4 @@
-<?php
-// Copyright 2019-2020 The Inescoin developers.
-// - Mounir R'Quiba
-// Licensed under the GNU Affero General Public License, version 3.
-?>  <link rel="stylesheet" type="text/css" href="/assets/ng/styles.559493eace1fe5f11d8d.css">
+  <link rel="stylesheet" type="text/css" href="/assets/ng/styles.4d66564f089cfcb24778.css">
 
 
 <nav class="navbar navbar-expand-lg navbar-light py-3">
@@ -19,9 +15,9 @@
 </section>
 
 
-<script src="/assets/ng/runtime-es2015.edb2fcf2778e7bf1d426.js" type="module"></script>
-<script src="/assets/ng/runtime-es5.edb2fcf2778e7bf1d426.js" nomodule defer></script>
-<script src="/assets/ng/polyfills-es5.ef4b1e1fc703b3ff76e3.js" nomodule defer></script>
-<script src="/assets/ng/polyfills-es2015.2987770fde9daa1d8a2e.js" type="module"></script>
-<script src="/assets/ng/main-es2015.274934481b1c708f70a2.js" type="module"></script>
-<script src="/assets/ng/main-es5.274934481b1c708f70a2.js" nomodule defer></script>
+<script src="/assets/ng/runtime-es2015.b6ec5f6f4f414e358409.js" type="module"></script>
+<script src="/assets/ng/runtime-es5.b6ec5f6f4f414e358409.js" nomodule defer></script>
+<script src="/assets/ng/polyfills-es5.101f8587355eadac8793.js" nomodule defer></script>
+<script src="/assets/ng/polyfills-es2015.c25a30c5031193b71649.js" type="module"></script>
+<script src="/assets/ng/main-es2015.47b68ebf4002fb5a468e.js" type="module"></script>
+<script src="/assets/ng/main-es5.47b68ebf4002fb5a468e.js" nomodule defer></script>

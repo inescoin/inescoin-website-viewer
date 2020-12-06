@@ -11,6 +11,7 @@ if (empty($domain)) {
 <html lang="<?php echo $currentLangue; ?>">
 <head>
   <meta charset="utf-8">
+  <base href="/store/checkout/">
   <meta name="viewport" content="width=device-width, initial-sc ale=1, shrink-to-fit=no">
   <?php if (!empty($domain['website']['meta'])) {
           foreach ($domain['website']['meta'] as $meta) { ?>

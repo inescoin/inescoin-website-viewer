@@ -25,7 +25,7 @@
 					<div class="row">
 						<div class="col-md-12 product-price text-center unless_nbre_piece"></div>
 						<div class="col-md-12 product-cta">
-							<a title="Ajouter le produit au panier" rel="nofollow" class="btn btn-default box-shadow btn-add-cart" data-product-info='<?php echo json_encode(['title' => $product['title'], 'sku' => $product['sku'], 'amount' => $product['amount'], 'currency' => $product['currency'], 'image' => $product['image'], 'quantity' => 1], JSON_PRETTY_PRINT); ?>'>
+							<a title="Ajouter le produit au panier" rel="nofollow" class="btn btn-default box-shadow btn-add-cart" data-product-info='<?php echo json_encode(['title' => htmlspecialchars($product['title'], ENT_QUOTES), 'sku' => htmlspecialchars($product['sku'], ENT_QUOTES), 'amount' => htmlspecialchars($product['amount'], ENT_QUOTES), 'currency' => htmlspecialchars($product['currency'], ENT_QUOTES), 'image' => htmlspecialchars($product['image'], ENT_QUOTES), 'quantity' => 1], JSON_PRETTY_PRINT); ?>'>
 									<span class="price"><?php echo $product['currency'] == 'usd' ? '$' : ''; ?><?php echo $product['amount']; ?> <?php echo $product['currency'] == 'eur' ? '€' : ''; ?></span>
 									Ajouter
 							</a>

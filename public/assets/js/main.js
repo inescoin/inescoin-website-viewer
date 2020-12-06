@@ -18,8 +18,12 @@
 			if (cartProducts[product.sku]) {
 				cartProducts[product.sku].quantity++;
 			} else {
-				console.log('Added --> ' + product.sku);
-				cartProducts[product.sku] = product;
+				if (product.sku) {
+					console.log('Added --> ' + product.sku, product);
+					cartProducts[product.sku] = product;
+				} else {
+					console.log('Error --> ', product);
+				}
 			}
 
 			console.log(product, cartProducts);

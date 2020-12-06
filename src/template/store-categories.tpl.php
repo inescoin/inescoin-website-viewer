@@ -22,15 +22,15 @@
           <?php if(isset($category['children']) && !empty($category['children'])) { ?>
           	<a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<?php } else { ?>
-          	<a class="nav-link" href="./?c=<?php echo $category['title'] . '._.' . $category['sku']; ?>">
+          	<a class="nav-link" href="/store/?c=<?php echo $category['title'] . '._.' . $category['sku']; ?>">
 					<?php } ?>
           	<?php echo ucfirst($category['title']); ?>
         	</a>
 					<?php if(isset($category['children']) && !empty($category['children'])): ?>
           <div class="dropdown-menu" aria-labelledby="bd-versions">
-        		<a class="dropdown-item" href="./?c=<?php echo $category['title'] . '._.' . $category['sku']; ?>">All</a>
+        		<a class="dropdown-item" href="/store/?c=<?php echo $category['title'] . '._.' . $category['sku']; ?>">All</a>
         		<?php foreach ($category['children'] as $subCategory): ?>
-          		<a class="dropdown-item" href="./?c=<?php echo $subCategory['title'] . '._.' . $subCategory['sku']; ?>"><?php echo ucfirst($subCategory['title']); ?></a>
+          		<a class="dropdown-item" href="/store/?c=<?php echo $subCategory['title'] . '._.' . $subCategory['sku']; ?>"><?php echo ucfirst($subCategory['title']); ?></a>
       			<?php endforeach; ?>
           </div>
         	<?php endif; ?>
