@@ -238,7 +238,7 @@ class App
 		return $this->_client('GET', 'status');
 	}
 
-	public function getDomainByUrl($url = 'inescoin.org')
+	public function getDomainByUrl($url = 'inescoin')
 	{
 		return $this->_client('POST', 'get-domain-url', [
 			'url' => $url
