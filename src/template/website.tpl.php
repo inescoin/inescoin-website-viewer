@@ -49,8 +49,10 @@
   <?php if ($i === 0) { ?>
     <style type="text/css">
       header.masthead {
-          background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8))), url("<?php echo $page['backgroundImage'] ?>");
-        }
+          background: url("<?php echo $page['backgroundImage'] ?>") no-repeat;
+          background-position: center;
+          min-height: 750px;
+      }
 
     </style>
     <header class="masthead">

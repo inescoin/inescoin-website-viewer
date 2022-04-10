@@ -27,14 +27,14 @@ if (empty($domain)) {
           foreach ($domain['theme']['css']['links'] as $link) { ?>
   <link href="<?php echo $link['link']; ?>" rel="stylesheet">
   <?php   }
-        }
+    }
   ?>
 
   <title><?php echo $domain['website']['title']; ?></title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="/assets/css/main.css">
 
-   <?php if (!empty($domain['theme']['css']['value'])) {?>
+  <?php if (!empty($domain['theme']['css']['value'])) {?>
   <style type="text/css">
     <?php echo $domain['theme']['css']['value']; ?>
   </style>

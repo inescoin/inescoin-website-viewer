@@ -15,8 +15,8 @@ class App
 {
 	public $currentLangue = 'en';
 
-	// private $nodeUrl = 'http://inescoin-node:8087';
-	private $nodeUrl = 'https://node.inescoin.org/';
+	private $nodeUrl = 'http://inescoin-node:8087';
+	// private $nodeUrl = 'https://node.inescoin.org/';
 
 	private $websiteName = '';
 
@@ -26,9 +26,9 @@ class App
 
 	public $languesMenu = [];
 
-	public $cacheTimeout = 180;
+	public $cacheTimeout = 1;
 	public $cacheFolder = '../cache/';
-	public $cacheClearTimer = 900;
+	public $cacheClearTimer = 1;
 
 	public $isStore = false;
 	public $isCheckout = false;

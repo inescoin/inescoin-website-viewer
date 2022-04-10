@@ -1,5 +1,5 @@
 {
-    "name": "moon/blockchain",
+    "name": "inescoin/inescoin-website-viewer",
     "require": {
         "guzzlehttp/guzzle": "^6.3"
     },
