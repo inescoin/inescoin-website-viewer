@@ -15,8 +15,7 @@ class App
 {
 	public $currentLangue = 'en';
 
-	private $nodeUrl = 'http://inescoin-node:8087';
-	// private $nodeUrl = 'https://node.inescoin.org/';
+	private $nodeUrl = 'https://node.inescoin.org/';
 
 	private $websiteName = '';
 
