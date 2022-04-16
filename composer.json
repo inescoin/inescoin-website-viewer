@@ -1,7 +1,7 @@
 {
     "name": "inescoin/inescoin-website-viewer",
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^7.4.2"
     },
 
     "require-dev": {
