@@ -63,6 +63,16 @@ if (empty($domain)) {
     <?php echo $domain['theme']['js']['value']; ?>
   </script>
   <script type="text/javascript" src="/assets/js/main.js"></script>
+  <?php if ($domain['website']['analytics']['active'] && !empty($domain['website']['analytics']['code'])): ?>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $domain['website']['analytics']['code']; ?>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '<?php echo $domain['website']['analytics']['code']; ?>');
+  </script>
+  <?php endif; ?>
 </body>
 </html>
 

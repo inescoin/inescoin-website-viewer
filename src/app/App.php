@@ -50,6 +50,7 @@ class App
 	}
 
 	public function run() {
+		$this->checkUri();
 		$this->controller();
 
 		return $this->render([
@@ -59,7 +60,12 @@ class App
 
 	public function runCheckout() {
 		$this->isCheckout = true;
+
 		$this->controller();
+
+		if (!$this->body['domain']['website']['store']) {
+			$this->error404();
+		}
 
 		return $this->render([
 			'view' => __DIR__ . '/../template/store-checkout.tpl.php',
@@ -92,6 +98,10 @@ class App
 
 		$this->controller();
 
+		if (!$this->body['domain']['website']['store']) {
+			$this->error404();
+		}
+
 		$template = 'store-index';
 		if (!empty($this->productSku)) {
 			$template = 'store-item';
@@ -100,6 +110,7 @@ class App
 		}
 
 		$this->body['navStoreCagories'] = __DIR__ . '/../template/store-categories.tpl.php';
+
 		return $this->render([
 			'view' => __DIR__ . '/../template/' . $template . '.tpl.php',
 		]);
@@ -129,7 +140,6 @@ class App
 		$this->body['categories'] = [];
 		$this->body['products'] = [];
 		$this->body['isCheckout'] = $this->isCheckout;
-
 
 		if (isset($domain['html'])) {
 			$chooseOne = !isset($domain['html'][$this->currentLangue]) || !$domain['html'][$this->currentLangue]['website']['active'];
@@ -218,17 +228,21 @@ class App
 		// var_dump($this->body['domain']); exit();
 	}
 
+	protected function checkUri($uri = '/') {
+		$parts = explode('/', $_SERVER['REQUEST_URI']);
+		if ('/' === $uri && count($parts) !== 2) {
+			$this->error404();
+		}
+	}
+
 	protected function render(array $params)
 	{
 		extract($this->body);
 		extract($params);
 
 		if (!$this->isCheckout && empty($domain)) {
-			header("HTTP/1.0 404 Not Found");
-			include(__DIR__ . '/../template/404.tpl.php');
-			return;
+			$this->error404();
 		}
-
 
 		include(__DIR__ . '/../template/wrapper.tpl.php');
 	}
@@ -242,6 +256,12 @@ class App
 		return $this->_client('POST', 'get-domain-url', [
 			'url' => $url
 		]);
+	}
+
+	private function error404() {
+		header("HTTP/1.0 404 Not Found");
+		include(__DIR__ . '/../template/404.tpl.php');
+		die();
 	}
 
 	private function _client($method = 'GET', $uri = 'get-status', $params = []) {
@@ -282,11 +302,11 @@ class App
 		}
 
 		if (isset($_GET[$parameter])) {
-			$value = filter_input(INPUT_GET, $parameter, FILTER_SANITIZE_STRING);
+			$value = filter_input(INPUT_GET, $parameter, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		}
 
 		if (isset($_POST[$parameter])) {
-			$value = filter_input(INPUT_POST, $parameter, FILTER_SANITIZE_STRING);
+			$value = filter_input(INPUT_POST, $parameter, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		}
 
 		return $value;

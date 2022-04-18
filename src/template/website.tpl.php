@@ -2,10 +2,12 @@
 // Copyright 2019-2020 The Inescoin developers.
 // - Mounir R'Quiba
 // Licensed under the GNU Affero General Public License, version 3.
+
 ?>  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"><?php echo $domain['company']['name']; ?></a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <img width="120" height="40" class="logo" src="<?php echo $domain['company']['logo']; ?>" alt="<?php echo $domain['company']['name']; ?>"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -23,9 +25,11 @@
               </li>
             <?php endif; ?>
           <?php endforeach; ?>
+          <?php if ($domain['website']['store']): ?>
           <li class="nav-item">
             <a class="nav-link" href="/store/">Store</a>
           </li>
+          <?php endif; ?>
           <?php if (count($languesMenu) > 1): ?>
           <li class="nav-item dropdown">
             <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,7 +57,6 @@
           background-position: center;
           min-height: 750px;
       }
-
     </style>
     <header class="masthead">
       <?php echo $page['body']; ?>
