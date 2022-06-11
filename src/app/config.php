@@ -4,3 +4,4 @@
 // Licensed under the GNU Affero General Public License, version 3.
 
 $website = 'inescoin';
+$nodeUrl = 'https://node.inescoin.org/';

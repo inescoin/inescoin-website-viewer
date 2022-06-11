@@ -15,7 +15,7 @@ class App
 {
 	public $currentLangue = 'en';
 
-	private $nodeUrl = 'https://node.inescoin.org/';
+	private $nodeUrl = '';
 
 	private $websiteName = '';
 
@@ -37,16 +37,17 @@ class App
 
 	public function __construct()
 	{
+		include(__DIR__ . '/config.php');
+
+		$this->websiteName = $website;
+		$this->nodeUrl = $nodeUrl;
+
 		$this->client = new \GuzzleHttp\Client([
 			'base_uri' => $this->nodeUrl,
 			'request.options' => [
 			     'exceptions' => false,
 			]
 		]);
-
-		include(__DIR__ . '/config.php');
-
-		$this->websiteName = $website;
 	}
 
 	public function run() {
