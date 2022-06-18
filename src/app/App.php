@@ -25,9 +25,9 @@ class App
 
 	public $languesMenu = [];
 
-	public $cacheTimeout = 1;
+	public $cacheTimeout = 30;
 	public $cacheFolder = '../cache/';
-	public $cacheClearTimer = 1;
+	public $cacheClearTimer = 600;
 
 	public $isStore = false;
 	public $isCheckout = false;
