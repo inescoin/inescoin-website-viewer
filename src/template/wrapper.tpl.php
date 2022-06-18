@@ -37,18 +37,15 @@ if (empty($domain)) {
     }
   ?>
 
-  <title><?php echo $domain['website']['title']; ?></title>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <?php if (!empty($domain['theme']['css']['value'])) {?>
-  <style type="text/css">
-    <?php echo $domain['theme']['css']['value']; ?>
+  <style>
+    <?php echo str_replace(["\n", "  "], ' ', $domain['theme']['css']['value']); ?>
   </style>
   <?php } ?>
 </head>
 <body id="page-top">
-
   <?php include($view); ?>
 
   <!-- Footer -->
@@ -66,18 +63,14 @@ if (empty($domain)) {
         }
   ?>
 
-  <script type="text/javascript">
-    <?php echo $domain['theme']['js']['value']; ?>
+  <script>
+    <?php echo  $domain['theme']['js']['value']; ?>
   </script>
-  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
   <?php if ($domain['website']['analytics']['active'] && !empty($domain['website']['analytics']['code'])): ?>
   <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $domain['website']['analytics']['code']; ?>"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', '<?php echo $domain['website']['analytics']['code']; ?>');
+    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '<?php echo $domain['website']['analytics']['code']; ?>');
   </script>
   <?php endif; ?>
 </body>
